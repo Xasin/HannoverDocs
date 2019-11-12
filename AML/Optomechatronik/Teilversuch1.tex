@@ -31,6 +31,8 @@ In der folgenden Grafik sind die drei relevanten Kurven der relativen Spektren v
 
 \subsubsection{Auswertung}
 
+\label{V1_AUSW}
+
 Zuerst wird die Kurve der Referenzmessung betrachtet. Überwiegend liegt diese bei 100\%, wie es von der Referenzmessung zu erwarten ist. An der oberen und unteren Grenze des für den menschlich sichtbaren Wellenlängenbereiches kommt es jedoch zu Schwankungen. Diese lassen sich dadurch erklären, dass die verwendete LED in diesen Wellenlängen sehr schwach bis nicht leuchtet, und die Messwerte hierdurch stark vom Hintergrundrauschen beeinflusst werden. 
 
 Das Spektrum des ersten Spiegels in Abb. \ref{V1_RES} lässt nun auf zweierlei schließen:
@@ -41,15 +43,16 @@ Schließlich wird das Spektrum beider Spiegel (1+2) betrachtet. Erstens ist zu e
 Nun werden die jeweiligen relativen reflektierten Spektren der Spiegel ermittelt. Unter der Annahme dass das nicht tranmittierte Licht zu 100\% reflektiert wird, wird vom bekannten Referenzspektrum das Transmissionsspektrum des ersten Spiegels, bzw. vom Transmissionsspektrum des ersten Spiegels das Transmissionsspektrum des ersten und zweiten Spiegels abgezogen, und nach ersterem Spektrum normiert.
 
 \begin{eqnarray}
-	R_{1, \lambda}(\lambda) = & \frac{D_{\lambda,0}(\lambda) - D_{\lambda,1}(\lambda)}{D_{\lambda,0(\lambda)}} \\
-	R_{2, \lambda}(\lambda) = & \frac{D_{\lambda,1}(\lambda) - D_{\lambda,1+2}(\lambda)}{D_{\lambda,1}(\lambda)}
+	T_{\lambda, 1}(\lambda) = & D_{\lambda,0}(\lambda) - D_{\lambda,1}(\lambda) \\
+	T_{\lambda, 2}(\lambda) = & D_{\lambda,1}(\lambda) - D_{\lambda,2}(\lambda) \\
+	T_{\lambda, 3}(\lambda) = & D_{\lambda,3}(\lambda)
 \end{eqnarray}
 Es ergeben sich folgende Kurven:
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.8]{Images/V1_Reflexionsspektren.png}
-	\caption{Berechnete relative Reflektionsspektren der zwei Spiegel plus übriges transmittiertes Licht}
+	\includegraphics[scale=0.8]{Images/V2_Transmissionen.png}
+	\caption{Berechnete relative Transmissionsspektren der aufgespalteten Strahlen}
 	\label{V1_REFLECT}
 \end{figure}
 
