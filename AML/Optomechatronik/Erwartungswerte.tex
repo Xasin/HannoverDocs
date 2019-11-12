@@ -1,28 +1,29 @@
 
-Aus den in Versuchsteil 1 und 2 gemessenen Werten soll nun im ersten Schritt der Auswertung der theoretisch erreichbare Farbraum berechnet werden. Hierfür werden zuerst die drei farbigen Lichtstrahlen mithilfe des Spektrums der Quecksilberdampflampe und der dichrotitischen Spiegeln berechnet. Aus diesen werden dann die Positionen in der Farbtafel bestimmt, mit welchen der darstellbare Farbraum bestimmt werden kann.
+Aus den in Versuchsteil 1 und 2 gemessenen Werten soll nun im ersten Schritt der Auswertung der theoretisch erreichbare Farbraum berechnet werden. Hierfür werden zuerst die drei farbigen Lichtstrahlen mithilfe des Spektrums der Quecksilberdampflampe und den Transmissionsspektren der dichrotitischen Spiegel berechnet. Aus diesen werden dann die Positionen in der Farbtafel bestimmt, mit welchen der darstellbare Farbraum bestimmt werden kann.
 
-Unter Annahme keiner Verluste an den dichroitischen Spiegeln können die drei Farbstrahlen mithilfe der in Abschnitt \ref{V1_AUSW} berecheten Transmissionsspektren und des in Abschnitt \ref{V2_AUSW} berechneten Quecksilberdampflampenspektrums die Spektren der Farbstrahlen wie folgt berechnet werden:
+Unter Annahme keiner Verluste an den dichroitischen Spiegeln können mithilfe der in Abschnitt \ref{V1_AUSW} berecheten Transmissionsspektren und des in Abschnitt \ref{V2_AUSW} berechneten Quecksilberdampflampenspektrums die Spektren der Farbstrahlen wie folgt berechnet werden:
 \begin{eqnarray}
 \Phi_{e\lambda,1}(\lambda) = & \Phi_{e\lambda}(\lambda)\cdot  T_{\lambda,1}(\lambda) \\
 \Phi_{e\lambda,2}(\lambda) = & \Phi_{e\lambda}(\lambda)\cdot  T_{\lambda,2}(\lambda) \\
 \Phi_{e\lambda,3}(\lambda) = & \Phi_{e\lambda}(\lambda) \cdot T_{\lambda,3}(\lambda)
 \end{eqnarray}
-Und es ergeben sich die folgenden drei Farbstrahlen:
+Und es ergeben sich für die Strahlen die folgenden drei Spektren:
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.7]{Images/A_Farbstrahlen.png}
+	\caption{Spektren der im Beamer aufgespalteten Farbstrahlen (Rot, Grün und Blau)}
 \end{figure}
 
-Für jede dieser Farbstrahlen wird nun die Farbkoordinate in der CIE-Normtafel berechnet. Hierfür wird, ausgehend von \cite[Seite 26]{AML_SKRIPT}, das Spektrum jeder Farbe mit den drei Tristimuluskurven integriert. Die Tristimuluskurven in $5nm$-Schritten werden von \cite{TRI_STIM} entnommen. Die Ergebnisse werden nun mit der Summe aller drei Ergebnisse normiert, und es ergeben sich die Koordinaten $x_n$ und $y_n$ wie folgt:
+Für jede dieser Farbstrahlen wird nun die Farbkoordinate in der CIE-Normtafel berechnet. Hierfür wird, ausgehend von \cite[Seite 26]{AML_SKRIPT}, das Spektrum jeder Farbe mit den drei Tristimuluskurven integriert. Die Tristimuluskurven in $5nm$-Schritten werden von }\cite[Seite 34]{AML_SKRIPT} entnommen. Die Ergebnisse werden nun mit der Summe aller drei Ergebnisse normiert, und es ergeben sich die Koordinaten $x_n$ und $y_n$ wie folgt:
 
-\begin{eqnarray}
+\begin{eqnarray*}
 X_n = & \int_{\mbox{380nm}}^{\mbox{780nm}} \Phi_{e\lambda,n}(\lambda)\cdot \overline{x}(\lambda)d\lambda \\
 Y_n = & \int_{\mbox{380nm}}^{\mbox{780nm}} \Phi_{e\lambda,n}(\lambda)\cdot \overline{y}(\lambda)d\lambda \\
 Z_n = & \int_{\mbox{380nm}}^{\mbox{780nm}} \Phi_{e\lambda,n}(\lambda)\cdot \overline{z}(\lambda)d\lambda \\
 x_n = & \frac{X_n}{X_n+Y_n+Z_n} \\
 y_n = & \frac{Y_n}{X_n+Y_n+Z_n}
-\end{eqnarray}
+\end{eqnarray*}
 Da hier diskrete Werte in 5nm-Schritten für sowohl die Tristimuluskurven als auch die Lichtströme der Farbstrahlen vor liegen, kann hier nicht von Hand integriert werden. Stattdessen wird vereinfacht die Summe der wellenlängenspezifischen Multiplikation der Tristimuluskurve und Lichtstromes verwendet. Da nach dem Ergebnis der Integrationen normiert wird, ist auch das $d\lambda$ vernachlässigbar. Es wird verwendet:
 \begin{equation}
 X_n = \sum_{i=0}^{80} \Phi_{e\lambda,n}(i*5nm + 380nm) \cdot \overline{x}(i*5nm + 380nm)
@@ -45,3 +46,4 @@ Strahl (n) & $X_n$ & $Y_n$ & $Z_n$ & $x_n$ & $y_n$ \\
 \hline
 \end{tabular}
 \end{table}
+Der daraus resultierende theoretisch abbildbare Farbraum ist in Abschnitt \ref{A_FCOORDS} dargestellt.
