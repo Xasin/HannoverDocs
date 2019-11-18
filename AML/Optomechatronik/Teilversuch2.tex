@@ -1,16 +1,16 @@
-Der zweite Teilversuch befasst sich mit der Lichtquelle eines handelsüblichen LCD-Beamer, einer sogenannten Quecksilberdampflampe. Sie liefert durch Gasentladungen einen starken, gebündelten und möglichst gleichmäßig spektral verteilten Lichtstrahl, welcher zur Projektion der Bilder des Beamers verwendet wird. Das Spektrum dieser Lampe beeinflusst maßgeblich die Farben, welche dem später betrachteten LCD-Beamer zur Verfügung stehen, und ist somit in Kombination mit den dichroitischen Spiegeln wichtiger Teil der Farbwiedergabe selbst.
+Der zweite Teilversuch befasst sich mit der Lichtquelle eines handelsüblichen LCD-Beamer, einer sogenannten Quecksilberdampflampe. Sie liefert durch Gasentladungen und zusätzliche Linsen einen starken, fokussierten und möglichst gleichmäßig über das sichtbare Spektrum verteilten Lichtstrahl, welcher zur Projektion der Bilder des Beamers verwendet wird. Das Spektrum dieser Lampe beeinflusst maßgeblich die Farben, welche dem später betrachteten LCD-Beamer zur Verfügung stehen, und ist somit in Kombination mit den dichroitischen Spiegeln wichtiger Teil der Farbwiedergabe selbst.
 
 In diesem Versuch soll das Spektrum und der Lichtstrom $\Phi_{e,\lambda}$ einer solchen Quecksilberdampflampe mithilfe einer Ulbrichtkugel bestimmt werden. Diese ist eine von innen streuend reflektierende Kugel, welche die Bestimmung des absoluten Lichstroms der Lampe anhand einer einzelnen Punktmessung ermöglicht. Wichtig ist hierbei auch eine korrekte Vermessung eines Referenz- und Absorptionsspektrums, um aus der Punktmessung der Lampe auf den realen Lichtstrom schließen zu können.
 
 \subsubsection{Versuchsaufbau}
 
-Der Versuchsaufbau besteht aus einer bereits aufgebauten Ulbrichtkugel inklusive Spektrometer, der Quecksilberdampflampe und einer Absorptionskorrekturlampe. Um die Lampen betreiben zu können steht eine Spannungsquelle zur Verfügung. Das Spektrometer wird von einem Computer aus bedient, von welchem die gemessenen Spektren gespeichert werden können.
+Der Versuchsaufbau besteht aus einer bereits aufgebauten Ulbrichtkugel inklusive Spektrometer, der Quecksilberdampflampe und einer Absorptionskorrekturlampe. Um die Lampen betreiben zu können steht eine Spannungsquelle zur Verfügung. Das Spektrometer wird von einem Computer aus bedient von welchem die gemessenen Spektren gespeichert werden können.
 
 \subsubsection{Versuchsdurchführung}
 
 Die Kalibrationsdaten der im Versuch verwendeten Ulbrichtkugel sind bekannt. Für andere, nicht bereits kalibierte Kugeln muss vor dem Versuch noch das Referenzspektrum $D_{\lambda,ref}$ einer bekannten Referenzlampe (mit bekanntem $\Phi_{e\lambda,ref}$), sowie das Spektrum der Absorptionskorrekturlampe $K_{\lambda,ref}$ (ohne eingebaute Quecksilberdampflampe) bestimmt werden.
 
-Die Messung des Spektrums der Quecksilberdampflampe ($D_\lambda(\lambda)$) erfolgt in den folgenden Schritten:
+Die Messung des Spektrums der Quecksilberdampflampe ($D_\lambda(\lambda)$) sowie des für die Berechnung von $\Phi_{e\lambda}$ nötigen $K_\lambda$ der Absorptionskorrekturlampe erfolgt in den folgenden Schritten:
 
 \begin{itemize}
 \item Das Spektrum der Absorptionskorrekturlampe mit eingebauter Quecksilberdampflampe, $K_\lambda$, wird gemessen. Die Absorptionskorrekturlampe wird hierfür eingeschaltet, die Dampflampe bleibt aus. Das Spektrum wird am Computer gespeichert.
@@ -39,7 +39,7 @@ In Abbildung \ref{V2_KOR} ist deutlich ein einheitlicher Faktor von ca. 2 erkenn
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.7]{Images/V2_Korr.png}
-	\caption{Berechnete Wellenlängenabhängige Korrekturfaktoren}
+	\caption{Berechnete Korrekturfaktoren}
 	\label{V2_KOR}
 \end{figure}
 
@@ -50,7 +50,7 @@ In Abbildung \ref{V2_KOR} ist deutlich ein einheitlicher Faktor von ca. 2 erkenn
 	\label{V2_QDL}
 \end{figure}
 
-In Abbildung \ref{V2_QDL} ist nun das gemessene Spektrum der Quecksilberdampflampe zu sehen. Erkennbar ist dass über den gesamten sichtbaren Wellenlängenbereich (400nm bis 600nm) Licht abgestrahlt wird. Dies passiert jedoch sehr Wellenlängenabhängig, mit deutlichen Peaks um 400nm, 440nm, 480nm, 550nm und 570nm. Sie entstehen durch die Arbeitsweise der Dampflampe, da die angeregten Elektronen nur bestimmte Wellenlängen aussenden können.
+In Abbildung \ref{V2_QDL} ist das gemessene Spektrum der Quecksilberdampflampe zu sehen. Erkennbar ist dass über den gesamten sichtbaren Wellenlängenbereich (400nm bis 600nm) Licht abgestrahlt wird. Dies schwankt jedoch stark in Abhängigkeit zur Wellenlänge, mit deutlichen Peaks um 400nm, 440nm, 480nm, 550nm und 570nm. Sie entstehen durch die Arbeitsweise der Dampflampe, welche durch Anregung von Elektronen auf diskrete Energiezustände in den Atomschalen nur bestimmte Wellenlängen aussenden kann.
 
 Der Lichtstrom der Dampflampe, $\Phi_{e,\lambda}(\lambda)$, kann nun bestimmt werden. Hierfür werden die Messwerte zuerst mit den berechneten Absorptionskorrekturfaktoren multipliziert, und anschließend mithilfe der bereitgestellten Referenzwerte in den absoluten spektralen Lichtstrom umgerechnet. Es gilt anhand von [\cite[Seite 22]{AML_SKRIPT}] folgende Gleichung. Der berechnete Lichtstrom ist in Abbildung \ref{V2_STROM} dargestellt.
 
