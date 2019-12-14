@@ -1,0 +1,13 @@
+V1.txt: Versuch 1 - Unwucht
+V2.txt: Versuch 2 - Testmasse
+V3.txt: Versuch 3 - Korrekturmasse
+Spalte 1: Beschleunigungssensor X - Zeitsignal
+Spalte 2: Beschleunigungssensor Y - Zeitsignal
+Spalte 3: Wegsensor X - Zeitsignal
+Spalte 4: Wegsensor Y - Zeitsignal
+Spalte 5: Beschleunigungssensor X - Frequenzspectrum (ASLD)
+Spalte 6: Beschleunigungssensor Y - Frequenzspectrum (ASLD)
+Spalte 7: Wegsensor X - Frequenzspectrum (ASLD)
+Spalte 8: Wegsensor Y - Frequenzspectrum (ASLD)
+Kontaktdaten:
+aml@iw.uni-hannover.de
