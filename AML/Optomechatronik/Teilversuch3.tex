@@ -16,14 +16,31 @@ Die Messung der drei Farbkomponenten wird in den folgenden Schritten durchgefüh
 \item Es wird ein PDF einer der drei Farben (Rot, Grün oder Blau) über den Beamer projiziert, und für die gewählte Farbe über die 15 Goniometerrotationen gemittelt der Farbpunkt gemessen. Der berechnete Farbpunkt wird abgespeichert, und dieser Schritt wird für alle drei Farben ausgeführt.
 \end{itemize}
 
-Zu beachten ist, dass das PDF mit den Farbbildern nicht unbedingt 100\% die Farbkanäle des Beamers ansteuert. Es gibt so z.B. immer eine gewisse Farbraumumrechnung, welche die Messwerte der Farbpositionen beeinträchtigen kann. Quantifizert werden kann dies unter Kenntnis des für das PDF verwendeten Farbraums, des Farbraumes des Beamers selbst, sowie eventueller Kalibrationsparameter des Beamers, die hier durch fehlende Spezifikation nicht genauer betrachtet werden können. Der gemessene durchschnittliche Farbraum, berechnet nach [\cite[Seite 27]{AML_SKRIPT}], ist in der Auswertung in Abschnitt \ref{A_FCOORDS} zu sehen.
+Zu beachten ist, dass das PDF mit den Farbbildern nicht unbedingt 100\% die Farbkanäle des Beamers ansteuert. Es gibt so z.B. immer eine gewisse Farbraumumrechnung, welche die Messwerte der Farbpositionen beeinträchtigen kann. Quantifizert werden kann dies unter Kenntnis des für das PDF verwendeten Farbraums, des Farbraumes des Beamers selbst, sowie eventueller Kalibrationsparameter des Beamers, die hier durch fehlende Spezifikation nicht genauer betrachtet werden können. Auch wird die Standardabweichung der einzelnen Farbwerte berechnet, um die Varianz der Farben quantifizieren zu können. Der gemessene durchschnittliche Farbraum, berechnet nach [\cite[Seite 27]{AML_SKRIPT}], ist in Tabelle \ref{tab:TV3_Averages} sowie in der Auswertung in Abschnitt \ref{A_FCOORDS} zu sehen.
 
 \begin{eqnarray*}
-x_{n,m} = \frac{1}{i}\sum_{k=1}^{i} x_{n,k} \\
-y_{n,m} = \frac{1}{i}\sum_{k=1}^{i} y_{n,k}
+x_{n,m} = &\frac{1}{N}\sum_{k=1}^{N} x_{n,k} \\
+y_{n,m} = &\frac{1}{N}\sum_{k=1}^{N} y_{n,k} \\
+x_{n,\sigma} = &\sqrt{\frac{1}{N-1}\sum_{i=1}^{N}\left(x_{n,i}-x_{n,m}\right)}  \\
+y_{n,\sigma} = &\sqrt{\frac{1}{N-1}\sum_{i=1}^{N}\left(y_{n,i}-y_{n,m}\right)}
 \end{eqnarray*}
+
+\begin{table}[h!]
+\centering
+\caption{Statistische Werte der Farbraummessung}
+\label{tab:TV3_Averages}
+\begin{tabular}{| c | c | c | c | c |}
+\hline
+n & $x_{n,m}$ & $x_{n,\sigma}$ & $y_{n,m}$ & $y_{n,\sigma}$ \\
+\hline
+Rot (1) & 0.4263 & 0.02422 & 0.4545 & 0.02037 \\
+Grün (2) & 0.3165 & 0.00284 & 0.5949 & 0.00307 \\
+Blau (3) & 0.1876 & 0.00659 & 0.2227 & 0.02946 \\
+\hline
+\end{tabular}
+\end{table}
 
 \subsubsection{Auswertung}
 
-In Abbildung \ref{A_Farbdreieck} sind die drei gemessenen gemittelten Farbpunkte des Beamers zu sehen. Deutlich zu erkennen ist, dass das Licht des Beamers auch für rein blaue bzw. rein rote Bilder einen hohen Anteil grünen Lichtes beinhaltet. Dies konnte bereits von den Teilnehmenden vor der Versuchsdurchführung beobachtet werden, da der Beamer einen deutlichen Grünstich besaß. Erklärt werden kann dies durch einer Alterung der Beamer-Elemente. Vor allem die LCD-Elemente werden durch Hitze beeinträchtigt, und verlieren ihre Funktionsweise. So ist hier anscheinend der LCD des grünen Lichtstrahls zu durchlässig geworden. 
+In Abbildung \ref{A_Farbdreieck} sind die drei gemessenen gemittelten Farbpunkte des Beamers zu sehen. Deutlich zu erkennen ist, dass das Licht des Beamers auch für rein blaue bzw. rein rote Bilder einen hohen Anteil grünen Lichtes beinhaltet. Dies konnte bereits von den Teilnehmenden vor der Versuchsdurchführung beobachtet werden, da der Beamer einen deutlichen Grünstich besaß. Die Messwerte selbst sind jedoch mit geringen Standardabweichungen durchaus plausibel, es scheinen nur geringfügige Messfehler vor zu liegen. Erklärt werden kann dieser Grünstich durch einer Alterung der Beamer-Elemente. Vor allem die LCD-Elemente werden durch Hitze beeinträchtigt, und verlieren ihre Funktionsweise. So ist hier anscheinend der LCD des grünen Lichtstrahls zu durchlässig geworden. 
 Der Flächeninhalt des Beamers ist 19\% des Adobe-Farbraumes, bzw. 27\% des sRGB-Farbraumes

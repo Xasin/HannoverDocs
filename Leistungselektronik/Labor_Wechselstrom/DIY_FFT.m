@@ -1,6 +1,8 @@
 
 clear all;
 
+UTILS;
+
 global Amp=1000;
 global Len=0.01;
 global freq=100000.0;
@@ -18,10 +20,11 @@ end
 t=(0:1/freq:2*Len);
 signal=s(t);
 
-freqs=(1/Len) .* (0:10);
+freqs=(0.5/Len) .* (0:10);
 
 fourFacts = [1 , 2*ones(1, size(freqs,2)-1)] .* fC(t, signal, freqs);
-plot(freqs, abs(fourFacts));
+stem(freqs, abs(fourFacts));
+break;
 
 waves = conj(ffacts(t, freqs)) .* fourFacts';
 

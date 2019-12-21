@@ -7,6 +7,8 @@ global IND_1 = cut_periods(dlmread("TEK00000.CSV", ",", 17, 0));
 global IND_2 = cut_periods(dlmread("TEK00001.CSV", ",", 17, 0));
 global IND_3 = cut_periods(dlmread("TEK00002.CSV", ",", 17, 0));
 
+global Steuer = dlmread("Steuerkennlinie.csv");
+
 %%% Coefficient calculation
 
 global currentCoefficients;
@@ -36,12 +38,14 @@ end
 function powerCalc()
   global currentCoefficients;
 
-  currentOvertones = abs(currentCoefficients(3:end,:));
+  currentEffs = currentCoefficients / sqrt(2);
+  
+  currentOvertones = abs(currentEffs(3:end,:));
   currentOvertones = power(currentOvertones, 2);
   currentOvertones = sum(currentOvertones, 1);
   currentOvertones = sqrt(currentOvertones);
   
-  currentBasetones = abs(currentCoefficients(2,:));
+  currentBasetones = abs(currentEffs(2,:));
   
   THD = currentOvertones ./ currentBasetones .* 100
   
@@ -58,7 +62,7 @@ function powerCalc()
   
   Verzerrungsblindleistungen = abs(voltageBasetone) .* currentOvertones
   
-  complexPowers = voltageBasetone .* conj(currentCoefficients);
+  complexPowers = voltageBasetone .* conj(currentEffs);
   Wirkleistungen = real(complexPowers(2, :))
   
   Grundschwingungsblindleistungen = imag(complexPowers(2, :))
@@ -66,4 +70,29 @@ function powerCalc()
   Scheinleistungen = sqrt(sum(power([Verzerrungsblindleistungen; Wirkleistungen; Grundschwingungsblindleistungen], 2)))
 end
 
-powerCalc()
+function calc_resistance()
+  global IND_2;
+
+  currentCut = current(IND_2)(1000:1500);
+  voltageCut = vGate(IND_2)(1000:1500);
+  
+  regFunction = [ones(501, 1) currentCut];
+  
+  [m, b] = ols(voltageCut, regFunction)
+  
+  plot((0:500), voltageCut, (0:500), m(1) + m(2) * currentCut)
+end
+
+function plotSteuer()
+  global Steuer;
+  
+  winkel = Steuer(:,1);
+  
+  steuerVals = Steuer(:,2:4);
+  steuerVals = steuerVals ./ max(steuerVals)
+  
+  plot(winkel, steuerVals)
+  grid minor
+end
+
+powerCalc();
